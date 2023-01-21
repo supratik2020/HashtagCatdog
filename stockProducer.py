@@ -1,11 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Feb  1 12:16:24 2015
-this program fetch stock data from netfonds.no 
-perform diff with previously fetched data and write
-the difference in Kafka
-@author: shafiab
-"""
+
 from kafka import *
 from urllib import urlretrieve
 import datetime as dt
