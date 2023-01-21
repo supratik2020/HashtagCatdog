@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Jan 31 23:40:26 2015
-www.netfonds.no does not provide data for all dates. This program supplements missing date from yahoo data
-@author: shafiab
-"""
+
 from cassandra.cluster import Cluster
 cluster = Cluster(['54.67.105.220'])
 session = cluster.connect('stockdata')
