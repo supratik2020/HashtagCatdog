@@ -43,31 +43,7 @@ timestamp = None
 #     return matched_topics
 
 def standardized_timestamp(frequency, dt=None):
-    '''
-    This function generates a timestamp with predictable minute and seconds
-    components. Right now, we hardcode seconds to 0. The minutes component 
-    is more interesting. For Oozie coordinator we need to have a predictable 
-    timestamp component so we can predict how future input paths will look
-    like. That's why we can't rely on a 'real' timestamp because the minutes
-    and seconds are arbitrary.
-    If dt is not given, then the a standarized timestamp based on the current
-    time will be returned.  Else the standardized timestamp of dt will be
-    returned.
-    @param frequency (integer) that indicates how to collapse minutes. 
-    For example frequency=15
-    10:06 -> 10:00
-    10:23 -> 10:15
-    10:59 -> 10:45
-    Frequency=30
-    10:21 -> 10:00
-    10:49 -> 10:30
-    
-    Frequency=0 is a special case used to generate daily filenames.
-    2013-01-04 11:18 -> 2013-01-04
-    2013-01-05 00:01 -> 2013-01-05
-    '''
-
-    if dt is None:
+      if dt is None:
       dt = datetime.now() 
 
     frequency = int(frequency)
