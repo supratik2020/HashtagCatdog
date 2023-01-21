@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Jan 18 02:27:26 2015
-
-@author: shafiab
-"""
 import csv
 __all__ = ['cashtag', 'cashtagSet']
 
