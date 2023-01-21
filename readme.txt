@@ -1,1 +1,0 @@
-these are old HDFS consumer. Current version saves on S3.
