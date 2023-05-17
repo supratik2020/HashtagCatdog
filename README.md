@@ -79,4 +79,3 @@ The choice of database for serving layer in #Cashtag is Cassandra. #Cashtag deal
   - partitioned by ticker symbol
   - clustering order by (year, month, day, hour, minute)
   
-The schema design for the rolling count dashboard in Tab 1 to represent the top trending stock in the last 10 minutes was quite tricky. Cassandra is generally a good choice for creating a rolling count dashboard due to its support for TTL (time to live) for each entry. Unfortunately, support for TTL is not available in the current Spark/Spark Streaming to Cassandra connector. As a result I need to improvise. While writing the top trending tickers to cassandra, I added a timestamp to each entry.  The Cassandra table was partitioned by ranking and clustering ordered by the time stamp. In the dashboard, the query was to select the top five stock by the ranking id and ordered descendingly by the timestamp. This gives me the latest entries from the table.
